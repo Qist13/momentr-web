@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import Layout from "./components/Layout.tsx";
-import Categories from "./pages/Categories.tsx";
-import CategoryPage from "./pages/CategoryPage.tsx";
-import SourcePage from "./pages/SourcePage.tsx";
-import Home from "./pages/Home.tsx";
-import NotFound from "./pages/NotFound.tsx";
+import Layout from "./components/Layout";
+import Categories from "./pages/Categories";
+import CategoryPage from "./pages/CategoryPage";
+import SourcePage from "./pages/SourcePage";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
 
 function App() {
     return (

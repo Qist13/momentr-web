@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { sources } from "../data/sources";
 import NotFound from "./NotFound";
 
 function SourcePage() {
@@ -8,11 +9,15 @@ function SourcePage() {
         return <NotFound />;
     }
 
+    const source = sources.find((source) => source.id === sourceId);
+
+    if (!source) {
+        return <NotFound />;
+    }
+
     return (
         <div>
-            <h1>Source</h1>
-            <p>Category ID: {categoryId}</p>
-            <p>Source ID: {sourceId}</p>
+            <h1>{source.name}</h1>
         </div>
     );
 }

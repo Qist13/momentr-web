@@ -1,18 +1,19 @@
 import { Link } from "react-router-dom";
+import { categories } from "../data/categories";
 
 function Categories() {
     return (
-        <ul>
-            <li>
-                <Link to="/categories/1">Category 1</Link>
-            </li>
-            <li>
-                <Link to="/categories/2">Category 2</Link>
-            </li>
-            <li>
-                <Link to="/categories/3">Category 3</Link>
-            </li>
-        </ul>
+        <div>
+            <ul>
+                {categories.map((category) => (
+                    <li key={category.id}>
+                        <Link to={`/categories/${category.id}`}>
+                            {category.name}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
     );
 }
 
