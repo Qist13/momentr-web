@@ -2,6 +2,11 @@
     font-weight: bold;
 }
 
+img {
+    max-width: 320px;
+}
+
 video {
-    max-width: 480px;
+    width: 100%;
+    max-width: 960px;
 }

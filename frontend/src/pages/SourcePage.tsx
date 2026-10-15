@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { sources } from "../data/sources";
 import { clips } from "../data/clips";
 import { formatDuration } from "../utils/formatDuration";
@@ -27,14 +27,11 @@ function SourcePage() {
                 <ul>
                     {sourceClips.map((clip) => (
                         <li key={clip.id}>
-                            <h2>{clip.title}</h2>
+                            <Link to={`/clips/${clip.id}`}>
+                                <img src={clip.thumbnailUrl} alt={clip.title} />
+                                <h2>{clip.title}</h2>
+                            </Link>
                             <p>{formatDuration(clip.durationSeconds)}</p>
-                            <video
-                                src={clip.videoUrl}
-                                poster={clip.thumbnailUrl}
-                                preload="none"
-                                controls
-                            />
                         </li>
                     ))}
                 </ul>

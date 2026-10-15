@@ -5,6 +5,7 @@ import CategoryPage from "./pages/CategoryPage";
 import SourcePage from "./pages/SourcePage";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+import ClipPage from "./pages/ClipPage";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                     path="categories/:categoryId/:sourceId"
                     element={<SourcePage />}
                 />
+                <Route path="clips/:clipId" element={<ClipPage />} />
                 <Route path="*" element={<NotFound />} />
             </Route>
         </Routes>
