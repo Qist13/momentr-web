@@ -1,3 +1,7 @@
 .active {
     font-weight: bold;
 }
+
+video {
+    max-width: 480px;
+}
