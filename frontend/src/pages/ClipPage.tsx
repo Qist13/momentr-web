@@ -21,18 +21,24 @@ function ClipPage() {
 
     return (
         <div>
-            {source && (
-                <Link to={`/categories/${source.categoryId}/${source.id}`}>
-                    ← {source.name}
-                </Link>
-            )}
-            <h1>{clip.title}</h1>
+            <header className="page-header">
+                {source && (
+                    <Link
+                        to={`/categories/${source.categoryId}/${source.id}`}
+                        className="back-link"
+                    >
+                        ← {source.name}
+                    </Link>
+                )}
+                <h1 className="page-title">{clip.title}</h1>
+            </header>
             <video
+                className="clip-player"
                 src={clip.videoUrl}
                 poster={clip.thumbnailUrl}
                 controls
             />
-            <p>
+            <p className="clip-meta">
                 {formatDuration(clip.durationSeconds)} ·{" "}
                 {new Date(clip.createdAt).toLocaleDateString()}
             </p>

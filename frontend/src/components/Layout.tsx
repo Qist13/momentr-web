@@ -3,14 +3,18 @@ import NavBar from "./NavBar";
 
 function Layout() {
     return (
-        <div>
-            <header>
-                <NavBar />
+        <div className="layout">
+            <header className="site-header">
+                <div className="container">
+                    <NavBar />
+                </div>
             </header>
-            <main>
+            <main className="site-main container">
                 <Outlet />
             </main>
-            <footer>Footer</footer>
+            <footer className="site-footer">
+                <div className="container">© Momentr</div>
+            </footer>
         </div>
     );
 }

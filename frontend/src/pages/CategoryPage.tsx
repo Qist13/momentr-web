@@ -22,16 +22,24 @@ function CategoryPage() {
 
     return (
         <div>
-            <h1>{category.name}</h1>
-            <p>{category.description}</p>
+            <header className="page-header">
+                <Link to="/categories" className="back-link">
+                    ← Categories
+                </Link>
+                <h1 className="page-title">{category.name}</h1>
+                <p className="page-subtitle">{category.description}</p>
+            </header>
             {categorySources.length === 0 ? (
-                <p>No sources yet</p>
+                <p className="empty-state">No sources yet</p>
             ) : (
-                <ul>
+                <ul className="grid">
                     {categorySources.map((source) => (
                         <li key={source.id}>
-                            <Link to={`/categories/${categoryId}/${source.id}`}>
-                                {source.name}
+                            <Link
+                                to={`/categories/${categoryId}/${source.id}`}
+                                className="card"
+                            >
+                                <h2 className="card-title">{source.name}</h2>
                             </Link>
                         </li>
                     ))}
